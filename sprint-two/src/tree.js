@@ -3,9 +3,11 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = [];  // fix me
-  _.extend(newTree, treeMethods);
+  newTree.children = [];  
+  _.extend(newTree, treeMethods); //this part is linear
   return newTree;
+
+  //complexity = constant O(1)
 };
 
 var treeMethods = {};
@@ -15,6 +17,7 @@ treeMethods.addChild = function(value) {
   var childTree = Tree(value);
   //add the child to current children array
   this.children.push(childTree);
+//complexity = constant O(1)
 };
 
 treeMethods.contains = function(target) {
@@ -37,6 +40,7 @@ treeMethods.contains = function(target) {
   }
   
   return answer;
+//complexity = exponential O(c^n)
 };
 
 

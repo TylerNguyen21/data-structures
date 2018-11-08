@@ -2,7 +2,7 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
-
+  //complexity when we instantiate a new linked list it is constant time O(1)
   list.addToTail = function(value) {
     var newNode = Node(value);
     if (list.head === null) {
@@ -13,13 +13,14 @@ var LinkedList = function() {
       list.tail = newNode;
       oldTail.next = newNode;
     }
-    
+    //complexity constant O(1)
   };
 
   list.removeHead = function() {
     var removedHead = list.head;
     list.head = list.head.next;
     return removedHead.value;
+  //complexity = constant o(1)
   };
 
   list.contains = function(target) {
@@ -39,6 +40,7 @@ var LinkedList = function() {
   };
 
   return list;
+  //complexity = linear O(n)
 };
 
 var Node = function(value) {
@@ -48,8 +50,10 @@ var Node = function(value) {
   node.next = null;
 
   return node;
+//complexity = constant O(n)
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
