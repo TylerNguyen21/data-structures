@@ -22,7 +22,6 @@ treeMethods.addChild = function(value) {
 
 treeMethods.contains = function(target) {
   //hold current tree
-  console.log(this);
   var answer = false;
   if (this.value === target ) {
     answer = true;
