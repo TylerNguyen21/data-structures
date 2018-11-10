@@ -5,6 +5,7 @@ var BinarySearchTree = function(data) {
   tree.right = null;
   tree.value = data;
   _.extend(tree, Search);
+  tree.counter = data ? 1 : 0;
   return tree;
 //complexity is constant O(1);
 };
@@ -16,6 +17,7 @@ Search.insert = function(data) {
   var newBubble = BinarySearchTree(data);
   if (this.value === undefined) {
     this.value = data;
+    this.counter ++;  
     return; 
   } else {
     if (data > this.value) {
@@ -30,6 +32,8 @@ Search.insert = function(data) {
         return;
       }
       this.insert.call(this.left, data);
+    } else {
+      this.counter++;   
     }
   }
 //complexity = linear;
