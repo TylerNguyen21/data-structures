@@ -28,6 +28,9 @@ HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   if (Array.isArray(this._storage[index])) {
     var oldIndex = this._storage[index].findIndex(function(pair) {
+      if (pair === undefined) {
+        return false;
+      }
       return pair[0] === k; 
     });
     if (oldIndex >= 0) {
