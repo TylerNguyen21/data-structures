@@ -1,4 +1,4 @@
-var doublyLinkedList = function() {
+var DoublyLinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
@@ -19,9 +19,15 @@ var doublyLinkedList = function() {
 
   list.removeHead = function() {
     var removedHead = list.head;
-    list.head = list.head.next;
-    list.head.previous = null;
-    return removedHead.value;
+    if (list.head.next !== null) {
+
+      list.head = list.head.next;
+      list.head.previous = null;
+      return removedHead.value;
+    } else {
+      list.head = list.head.next;
+      return removedHead.value;
+    }
   //complexity = constant o(1)
   };
 
