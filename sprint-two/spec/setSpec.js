@@ -23,5 +23,10 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
-
+  
+  it('should not add values that were already there', function () {
+    set.add('Esey');
+    set.add('Esey');
+    expect(set.length).to.equal(1);
+  });
 });

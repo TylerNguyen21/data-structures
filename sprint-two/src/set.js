@@ -10,6 +10,9 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
+  if (this.contains(item)) {
+    return;
+  }
   this.length++;
   this.storage[this.length] = item;
   
