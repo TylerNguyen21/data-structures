@@ -106,7 +106,7 @@ class LinkedList {
   //complexity = linear O(n)
 };
 
-var Node = function(value){
+var Node = value => {
   var node = {};
   node.value = value;
   node.next = null;
