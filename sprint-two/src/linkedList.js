@@ -67,7 +67,6 @@ class LinkedList {
   }
   //complexity when we instantiate a new linked list it is constant time O(1)
   addToTail(value) {
-    debugger;
     var newNode = new Node(value);
     if (this.head === null) {
       this.head = newNode;
